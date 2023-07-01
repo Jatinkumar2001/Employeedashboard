@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+</head>
+<body>
+<div th:include="Css.html"></div>
+	<div class="container"  >
+		<h1>Employee DashBoard</h1>
+		<hr>
+		<div class="card">
+			<form action="addEmployee" method="post">
+				<div class="row">
+					<div class="col-5 mx-5 my-4">
+						<label for="firstName" class="form-label">FirstName</label><input
+							type="text" class="form-control" name="firstName" required>
+					</div>
+					<div class="col-5 mx-5 my-4">
+						<label for="lastName" class="form-label">LastName</label><input
+							type="text" class="form-control" name="lastName" required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-5 mx-5 my-2">
+						<label for="phoneNo" class="form-label">PhoneNo</label><input
+							type="text" class="form-control" name="phoneNo" required>
+					</div>
+					<div class="col-5 mx-5 my-2">
+						<label for="salary" class="form-label">Salary</label><input
+							type="text" class="form-control" name="salary" required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-5 mx-5 my-2">
+						<label for="salary" class="form-label">Department</label> <select
+							class="form-select" name="department">
+							<option selected>Accounts</option>
+							<option>Sales</option>
+							<option>Development</option>
+							<option>Research</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-1 ms-5 my-2">
+						<button type="submit" class="btn btn-primary btn-sm">Submit</button>
+					</div>
+					<div class="col-1  my-2" >
+						<input type="button" onclick='history.back()'
+							class="btn btn-secondary btn-sm" value="cancel">
+					</div>
+				</div>
+
+			</form>
+		</div>
+
+	</div>
+</body>
+</html>

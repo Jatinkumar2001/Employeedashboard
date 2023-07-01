@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<div class="container"  >
+	<div th:include="Css.html"></div>
+		<h1>Employee DashBoard</h1>
+		<hr>
+		<div class="card">
+			<form action="editEmployee" method="post">
+			<input type="hidden" name="eid" 	th:value="${employee.eid}">
+				<div class="row">
+					<div class="col-5 mx-5 my-4">
+						<label for="firstName" class="form-label">FirstName</label><input
+							type="text" class="form-control" name="firstName"
+								th:value="${employee.firstName}" required>
+					</div>
+					<div class="col-5 mx-5 my-4">
+						<label for="lastName" class="form-label">LastName</label><input
+							type="text" class="form-control" name="lastName"
+							th:value="${employee.lastName}" required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-5 mx-5 my-2">
+						<label for="phoneNO" class="form-label">PhoneNo</label><input
+							type="text" class="form-control" name="phoneNo"
+								th:value="${employee.phoneNo}" required>
+					</div>
+					<div class="col-5 mx-5 my-2">
+						<label for="salary" class="form-label">Salary</label><input
+							type="text" class="form-control" name="salary"
+								th:value="${employee.salary}" required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-5 mx-5 my-2">
+						<label for="salary" class="form-label">Department</label> <select
+							class="form-select" name="department" th:if="${employee.department == 'Accounts'}">							
+								<option selected>Accounts</option>
+								<option>Sales</option>
+								<option>Development</option>
+								<option>Research</option>
+								</select>
+								<select
+							class="form-select" name="department" th:if="${employee.department == 'Sales'}">
+							
+								<option>Accounts</option>
+								<option selected>Sales</option>
+								<option>Development</option>
+								<option>Research</option>
+							</select>
+								<select
+							class="form-select" name="department" th:if="${employee.department == 'Development'}">
+								<option>Accounts</option>
+								<option>Sales</option>
+								<option selected>Development</option>
+								<option>Research</option>
+						</select>
+								<select
+							class="form-select" name="department" th:if="${employee.department == 'Research'}">
+								<option>Accounts</option>
+								<option>Sales</option>
+								<option>Development</option>
+								<option selected>Research</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-1 ms-5 my-2">
+						<button type="submit" class="btn btn-primary btn-sm"
+							onclick='confirm("are you sure")'>Update</button>
+					</div>
+					<div class="col-1  my-2">
+						<input type="button" onclick='history.back()'
+							class="btn btn-secondary btn-sm" value="cancel">
+					</div>
+				</div>
+
+			</form>
+		</div>
+
+	</div>
+</body>
+
+</html>
